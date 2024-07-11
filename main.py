@@ -5,7 +5,7 @@ import time
 import os
 
 SMTP_HOST = os.environ.get('SMTP_HOST')
-SMTP_PORT = int(os.environ.get('SMTP_PORT'))
+SMTP_PORT = os.environ.get('SMTP_PORT')
 SMTP_USERNAME = os.environ.get('SMTP_USERNAME')
 SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD')
 FROM_EMAIL = os.environ.get('FROM_EMAIL')
