@@ -32,13 +32,13 @@ def ping_server(host):
         return False
 
 
-while True:
-    if ping_server(SERVER_HOST):
-        current_time = time.strftime("%H:%M:%S")
-        send_email("Server Status", f"{current_time} Server {SERVER_HOST} ist aktiv.")
-        print(f"{current_time} SERVER AKTIV")
-    else:
-        current_time = time.strftime("%H:%M:%S")
-        send_email("Achtung: Server Down Alarm", f"{current_time} Server {SERVER_HOST} antwortet nicht.")
-        print(f"{current_time} SERVER ANTWORTET NICHT")
-    break
+
+if ping_server(SERVER_HOST):
+    current_time = time.strftime("%H:%M:%S")
+    send_email("Server Status", f"{current_time} Server {SERVER_HOST} ist aktiv.")
+    print(f"{current_time} SERVER AKTIV")
+else:
+    current_time = time.strftime("%H:%M:%S")
+    send_email("Achtung: Server Down Alarm", f"{current_time} Server {SERVER_HOST} antwortet nicht.")
+    print(f"{current_time} SERVER ANTWORTET NICHT")
+
