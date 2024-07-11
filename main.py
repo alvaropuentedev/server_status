@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 import time
 import os
 
-SMTP_HOST = os.environ.get('SMTP_HOST')
+SMTP_HOST = "smtp.office365.com"
 SMTP_PORT = 587
 SMTP_USERNAME = os.environ.get('SMTP_USERNAME')
 SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD')
