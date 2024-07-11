@@ -1,4 +1,4 @@
-import smtplib
+import smtplib, ssl
 import subprocess
 from email.mime.text import MIMEText
 import time
