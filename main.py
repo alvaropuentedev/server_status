@@ -25,8 +25,7 @@ def send_email(subject, body):
 
 def ping_server(host):
     try:
-        # subprocess.check_output(['ping', host], universal_newlines=True)
-        print(subprocess.check_output(['ping', host], universal_newlines=True))
+        subprocess.check_output(['ping', '-c', '4', host], universal_newlines=True)
         return True
     except subprocess.CalledProcessError:
         return False
