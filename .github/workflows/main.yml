@@ -38,6 +38,6 @@ jobs:
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
         TO_EMAIL: ${{ secrets.TO_EMAIL }}
-        SERVER_HOST: ${{ secrets.SERVER_HOST }}
+        SERVER_HOST: 'alvaropuente.dev'
       run: |
         python main.py
