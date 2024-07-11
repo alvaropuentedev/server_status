@@ -2,6 +2,8 @@ import smtplib, ssl
 import subprocess
 from email.mime.text import MIMEText
 import time
+import pytz
+from datetime import datetime
 import os
 
 SMTP_HOST = os.environ.get('SMTP_HOST')
@@ -29,8 +31,10 @@ def ping_server(host):
         return True
     except subprocess.CalledProcessError:
         return False
+    
 
-
+TZ_MADRID = pytz.timezone('Europe/Madrid')
+current_time = datetime.now(TZ_MADRID).strftime("%H:%M:%S")
 
 if ping_server(SERVER_HOST):
     current_time = time.strftime("%H:%M:%S")
