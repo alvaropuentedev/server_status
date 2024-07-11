@@ -37,9 +37,7 @@ while True:
         current_time = time.strftime("%H:%M:%S")
         send_email("Server Status", f"{current_time} Server {SERVER_HOST} ist aktiv.")
         print(f"{current_time} SERVER AKTIV")
-        time.sleep(14400)  # Espera 4 horas antes de verificar nuevamente
     else:
         current_time = time.strftime("%H:%M:%S")
         send_email("Achtung: Server Down Alarm", f"{current_time} Server {SERVER_HOST} antwortet nicht.")
         print(f"{current_time} SERVER ANTWORTET NICHT")
-        time.sleep(14400)  # Espera 4 horas antes de verificar nuevamente
