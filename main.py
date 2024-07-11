@@ -41,3 +41,4 @@ while True:
         current_time = time.strftime("%H:%M:%S")
         send_email("Achtung: Server Down Alarm", f"{current_time} Server {SERVER_HOST} antwortet nicht.")
         print(f"{current_time} SERVER ANTWORTET NICHT")
+    break
