@@ -8,7 +8,6 @@ on:
   schedule:
     - cron: '*/30 * * * *'  # Ejecutar cada 30 minutos
 env:
-  SMTP_HOST: ${{ secrets.SMTP_HOST }}
   SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
   SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
   FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
@@ -28,7 +27,6 @@ jobs:
         python-version: "3.10"
     - name: Run Python Script
       env:
-        SMTP_HOST: ${{ secrets.SMTP_HOST }}
         SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
