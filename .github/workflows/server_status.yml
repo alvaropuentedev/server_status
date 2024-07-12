@@ -2,8 +2,7 @@ name: server-status
 
 on:  
   schedule:
-    - cron: '*/5 * * * *'
-  workflow_dispatch:
+    - cron: '0 5 * * *'
 
 env:
   SMTP_HOST: ${{ secrets.SMTP_HOST }}
@@ -25,7 +24,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
