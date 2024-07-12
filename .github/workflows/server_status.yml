@@ -3,6 +3,7 @@ name: Python server status
 on:  
   schedule:
     - cron: "0/5 * * * *"
+  workflow_dispatch:
 
 env:
   SMTP_HOST: ${{ secrets.SMTP_HOST }}
