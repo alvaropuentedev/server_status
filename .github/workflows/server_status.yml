@@ -1,4 +1,4 @@
-name: Python server status
+name: server-status
 
 on:  
   schedule:
@@ -33,13 +33,4 @@ jobs:
           pip install pytz
 
       - name: Run Python Script
-        env:
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
-          TO_EMAIL: ${{ secrets.TO_EMAIL }}
-          SERVER_HOST: ${{ secrets.SERVER_HOST }}
-
         run: python ./script/server_status.py
