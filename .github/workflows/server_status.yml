@@ -2,7 +2,7 @@ name: server-status
 
 on:  
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '0 15/1 * * *'
   workflow_dispatch:
 
 env:
