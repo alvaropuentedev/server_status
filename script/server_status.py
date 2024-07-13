@@ -34,12 +34,16 @@ def ping_server(host):
     
 
 TZ_MADRID = pytz.timezone('Europe/Madrid')
-CURRENT_TIME = datetime.now(TZ_MADRID).strftime("%H:%M:%S")
+CURRENT_TIME = datetime.now(TZ_MADRID).strftime('%H:%M:%S')
+CURRENT_HOUR = datetime.now().strftime('%H')
 
 if ping_server(SERVER_HOST):
-    send_email("Server Status", f"{CURRENT_TIME} Server {SERVER_HOST} ist aktiv.")
-    print(f"{CURRENT_TIME} SERVER AKTIV")
+    if CURRENT_HOUR == '15' or CURRENT_HOUR == '16':
+        send_email('Server Status', f'{CURRENT_TIME} Server {SERVER_HOST} ist aktiv.')
+        print(f'{CURRENT_TIME} SERVER AKTIV')
+    else:
+        print(f'{CURRENT_TIME} Server ist aktiv')
 else:
-    send_email("Achtung: Server Down Alarm", f"{CURRENT_TIME} Server {SERVER_HOST} antwortet nicht.")
-    print(f"{CURRENT_TIME} SERVER ANTWORTET NICHT")
+    send_email('Achtung: Server Down Alarm', f'{CURRENT_TIME} Server {SERVER_HOST} antwortet nicht.')
+    print(f'{CURRENT_TIME} SERVER ANTWORTET NICHT')
 
