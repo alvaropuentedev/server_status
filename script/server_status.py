@@ -35,7 +35,7 @@ def ping_server(host):
 
 TZ_MADRID = pytz.timezone('Europe/Madrid')
 CURRENT_TIME = datetime.now(TZ_MADRID).strftime('%H:%M:%S')
-CURRENT_HOUR = datetime.now().strftime('%H')
+CURRENT_HOUR = datetime.now(TZ_MADRID).strftime('%H')
 
 if ping_server(SERVER_HOST):
     if CURRENT_HOUR == '18' or CURRENT_HOUR == '19':
