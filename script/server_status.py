@@ -38,7 +38,7 @@ CURRENT_TIME = datetime.now(TZ_MADRID).strftime('%H:%M:%S')
 CURRENT_HOUR = datetime.now(TZ_MADRID).strftime('%H')
 
 if ping_server(SERVER_HOST):
-    if CURRENT_HOUR == '8':
+    if CURRENT_HOUR == '09':
         send_email('Server Status', f'{CURRENT_TIME} Server {SERVER_HOST} ist aktiv.')
         print(f'{CURRENT_TIME} SERVER AKTIV')
     else:
