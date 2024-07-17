@@ -2,7 +2,7 @@ name: server-status
 
 on:  
   schedule:
-    - cron: '0/10 * * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 env:
@@ -42,5 +42,5 @@ jobs:
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Update server_status.cvs
+          commit_message: Update server_status.csv
           commit_user_name: Alvaro Puente [GitHub Actions]
