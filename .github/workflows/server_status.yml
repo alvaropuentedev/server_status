@@ -13,10 +13,14 @@ env:
   FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
   TO_EMAIL: ${{ secrets.TO_EMAIL }}
   SERVER_HOST: ${{ secrets.SERVER_HOST }}
+  REPO_PATH: ${{ secrets.REPO_PATH }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repo
@@ -34,3 +38,9 @@ jobs:
 
       - name: Run Python Script
         run: python ./script/server_status.py
+      
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update server_status.cvs
+          commit_user_name: Alvaro Puente [GitHub Actions]
