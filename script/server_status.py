@@ -23,7 +23,7 @@ def send_email(subject, body):
     msg['From'] = FROM_EMAIL
     msg['To'] = TO_EMAIL
 
-    # Adjuntar el archivo CSV
+    # Attachment; filename="server_status.csv"'
     with open('server_status.csv', 'rb') as csvfile:
         attachment = MIMEBase('application', 'octet-stream')
         attachment.set_payload(csvfile.read())
@@ -31,7 +31,7 @@ def send_email(subject, body):
         attachment.add_header('Content-Disposition', 'attachment', filename='server_status.csv')
         msg.attach(attachment)
 
-    # Adjuntar el cuerpo del mensaje
+    # Attach the body of the message
     msg.attach(MIMEText(body, 'plain'))
 
     with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as smtp:
@@ -51,7 +51,7 @@ def ping_server(host):
 TZ_MADRID = pytz.timezone('Europe/Madrid')
 CURRENT_TIME = datetime.now(TZ_MADRID).strftime('%H:%M:%S')
 CURRENT_HOUR = datetime.now(TZ_MADRID).strftime('%H')
-CURRENT_DAY = datetime.now().strftime('%A')
+CURRENT_DAY = datetime.now(TZ_MADRID).strftime('%A')
 
 
 if ping_server(SERVER_HOST):
