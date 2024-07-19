@@ -55,7 +55,7 @@ CURRENT_DAY = datetime.now(TZ_MADRID).strftime('%A')
 
 
 if ping_server(SERVER_HOST):
-    if CURRENT_DAY == 'Friday ' and CURRENT_HOUR == '07':
+    if CURRENT_DAY == 'Friday' and CURRENT_HOUR == '07':
         with open('server_status.csv', 'a', newline='') as csvfile:
             writer = csv.writer(csvfile)
             writer.writerow([CURRENT_TIME, CURRENT_DAY, SERVER_HOST, 'Server ist aktiv'])
